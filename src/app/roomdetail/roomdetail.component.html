@@ -1,0 +1,90 @@
+<h1>Hello</h1>
+<h1>Hello</h1>
+<div class="card border-0">
+  <div class="row">
+    <aside class="col-sm-4">
+      <article class="gallery-wrap">
+        <div class="img-big-wrap" style="margin-left: 30px">
+          <div> <a href="#"><img src="#" alt="ROOMS PHOTO"></a></div>
+        </div>
+      </article>
+    </aside>
+    <aside class="col-sm-5">
+      <article class="card-body m-0 pt-0 pl-5">
+        <h3 class="title text-uppercase">ROOM 1 LUX SUPER</h3>
+        <div class="rating">
+          <div class="stars">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="review-no ml-2">(41 avis)</span>
+          </div>
+        </div>
+        <div class="mb-3 mt-3">
+          <span class="h7 text-success"> LUX ROOMS NUMBER 1</span>
+        </div>
+        <div class="mb-3 mt-3">
+          <span class="price-title">Price : </span>
+          <span class="price color-price-waanbii">10000 <sup>T</sup></span>
+        </div>
+        <dl class="item-property">
+          <dt>Description</dt>
+          <dd><p>Some text///////s/ad//sd/sa/d/as/d </p></dd>
+        </dl>
+        <dl class="param param-feature">
+          <dt>Contact me:</dt>
+          <dd>8 777 0213 21312</dd>
+        </dl>
+      </article>
+    </aside>
+    <aside class="col-sm-3">
+      <div class="row">
+
+      </div>
+      <div class="row ">
+        <button class="btn btn-default filter-button" type="button" data-toggle="modal" data-target="#call1"> <i class="fa fa-credit-card"></i>Reserved</button>
+        <div class="modal fade" id="call1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title lead" id="exampleModalLongTitle">Thank you for choosing this room, select a date </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body lead" style="text-align: center ">
+                <form>
+                  <p>Choose date:
+                    <input type="date" name="calendar" value="2012-12-08"
+                           max="2021-03-01" min="2020-12-08"></p>
+                </form>
+              </div>
+              <dt style="text-align: center">Make Payment:</dt>
+              <div class="modal-footer">
+                <form method='POST' action='https://demo.paykeeper.ru/create/' style="text-align: center">
+                  <p>Enter the amount: <input type='text' name='sum' value='10000'/> </p><br />
+                  <p>Enter the order number: <input type='text' name='orderid' id="ordernum" value=''/><br />
+                  <p>Enter your room:<input type='text' name='service_name' value='Reserve ROOM1'/> </p><br />
+                  <input type='submit' class="btn btn-primary get-started-btn mt-1 mb-1 btn_reg" value='Reserve' />
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-4 mt-4">
+        <a class="btn btn-default filter-button" href="{% url 'ad:all' %}"> <i class="fa fa-arrow-alt-circle-left"></i>Back to all Rooms </a>
+      </div>
+      <div class="row mb-4 mt-4">
+        <button class="btn btn-lg btn-success" type="button"><i class="fa fa-heart fa-beat"></i></button>
+      </div>
+      <hr class="m-0 p-0">
+
+    </aside>
+
+  </div>
+
+</div>
