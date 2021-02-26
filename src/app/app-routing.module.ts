@@ -1,7 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { IndexComponent } from './index/index.component';
+import { GaleryComponent } from './galery/galery.component';
+import { LoginComponent } from './login/login.component';
+import { RoomsComponent } from './rooms/rooms.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { RoomdetailComponent } from './roomdetail/roomdetail.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'login', component: LoginComponent},
+  { path: 'registration', component: RegistrationComponent},
+  { path: 'rooms', component: RoomsComponent,
+    children: [
+      { path: 'details/:id', component: RoomdetailComponent
+      }
+    ]
+  },
+  { path: 'home', component: IndexComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

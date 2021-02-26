@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RoomdetailComponent } from './roomdetail/roomdetail.component';
+import {RouterModule, ROUTES} from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { RoomdetailComponent } from './roomdetail/roomdetail.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
