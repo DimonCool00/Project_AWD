@@ -26,14 +26,24 @@
             </div>
           </div>
         </div>
-        <ul class="nav navbar-nav navbar-right ml-auto">
+        <ul *ngIf="name=='admin'; else elseBlock" class="nav navbar-nav navbar-right ml-auto">
           <li class="nav-item">
-            <a class="nav-link dropdown-toggle" href="/login" >Login</a>
+            <a class="nav-link dropdown-toggle" href="/login" >Welcome</a>
           </li>
           <li class="nav-item">
-            <a href="/registration" class="btn btn-primary get-started-btn mt-1 mb-1">Sign up</a>
+            <a href="/registration" class="btn btn-primary get-started-btn mt-1 mb-1">Admin</a>
           </li>
         </ul>
+        <ng-template #elseBlock>
+          <ul class="nav navbar-nav navbar-right ml-auto">
+            <li class="nav-item">
+              <a class="nav-link dropdown-toggle" href="/login" >Login</a>
+            </li>
+            <li class="nav-item">
+              <a href="/registration" class="btn btn-primary get-started-btn mt-1 mb-1">Sign up</a>
+            </li>
+          </ul>
+        </ng-template>
       </div>
     </nav>
   </div>

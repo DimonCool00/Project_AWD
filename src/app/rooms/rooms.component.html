@@ -7,6 +7,11 @@
     <p class="lead"> You welcome the HotelManagement System.<i class="fas fa-shopping-cart"></i>.Dear guest, all our rooms are presented here with detailed descriptions and photos for them, you can also book the desired room for the desired date and then pay for it.</p>
   </div>
   <h1 class="display-4" style="text-align: center;"><i class="fas fa-angle-double-left"></i>List of the Rooms<i class="fas fa-angle-double-right"></i></h1><div align="center">
+    <button *ngFor="let room of rooms" [ngClass]="{
+    'text-success':room.typeroom == 'standard',
+    'text-primary':room.typeroom == 'juniorlux' || room.typeroom == 'lux' || room.typeroom == 'viplux',
+    'text-danger':room.typeroom == 'presidential'
+  }" class="btn btn-default filter-button">{{room.id}}.{{ room.typeroom}}</button>
   <button class="btn btn-default filter-button" data-filter="all">All</button>
   <button class="btn btn-default filter-button" data-filter="Standard">Standard suite</button>
   <button class="btn btn-default filter-button" data-filter="Junior">JuniorLux suite</button>

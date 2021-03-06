@@ -17,4 +17,17 @@
     <p class="lead" style="text-align: center">Here you can see in detail the photos of our hotel, various types and restaurants that we have.All photos are of good quality and provided by the administration of the Rixos hotel.</p>
   </div>
   <app-galery></app-galery>
+  <div class="jumbotron" style="margin-bottom: 0rem;">
+    <h1 class="display-4" > Money Converter Pipe</h1>
+    <p> Infomation actualy on  {{toDate | date:'dd.MM.yyyy hh:mm:ss'}} </p>
+    <p>Tenge: <input type="text" [(ngModel)]="tenge"/>
+      Rub: {{tenge | moneyConverter:'R'}} </p>
+    <p>Tenge: <input type="text" [(ngModel)]="rub"/>
+      Dollars : {{tenge | moneyConverter:'D'}}
+    </p>
+    <p>Tenge: <input type="text" [(ngModel)]="tenge"/>
+      Euro : {{tenge | moneyConverter:'E'}}
+      <h1>Our satisfied customers!</h1>
+    <p> Its over 10000 people, in percent is {{ people | percent}}</p>
+  </div>
 </div>

@@ -12,6 +12,8 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RoomdetailComponent } from './roomdetail/roomdetail.component';
 import {RouterModule, ROUTES} from '@angular/router';
+import {MoneyConverterPipe} from './pipes/money-converter.pipe';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -24,12 +26,14 @@ import {RouterModule, ROUTES} from '@angular/router';
     LoginComponent,
     RoomsComponent,
     RegistrationComponent,
-    RoomdetailComponent
+    RoomdetailComponent,
+    MoneyConverterPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
