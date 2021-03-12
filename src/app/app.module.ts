@@ -14,6 +14,9 @@ import { RoomdetailComponent } from './roomdetail/roomdetail.component';
 import {RouterModule, ROUTES} from '@angular/router';
 import {MoneyConverterPipe} from './pipes/money-converter.pipe';
 import {FormsModule} from '@angular/forms';
+import {UserService} from './services/users.service';
+import {LoggingService} from './services/logging.service';
+import {RoomsService} from './services/rooms.service';
 
 
 @NgModule({
@@ -35,7 +38,7 @@ import {FormsModule} from '@angular/forms';
     RouterModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [UserService, LoggingService,RoomsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {RoomsService} from '../services/rooms.service';
 
 @Component({
   selector: 'app-rooms',
   templateUrl: './rooms.component.html',
-  styleUrls: ['./rooms.component.css']
+  styleUrls: ['./rooms.component.css'],
+  providers: [RoomsService]
 })
 export class RoomsComponent implements OnInit {
   rooms = [
@@ -15,10 +17,17 @@ export class RoomsComponent implements OnInit {
     { id: 0, typeroom: 'all'}
   ];
 
+  items: string[] = [];
+  room!: string;
+  constructor(private roomsService: RoomsService){}
 
-  constructor() { }
+  addItem(room: string){
 
-  ngOnInit(): void {
+    // tslint:disable-next-line:no-bitwise
+    this.roomsService.addRoom(room);
+  }
+  ngOnInit(){
+    this.items = this.roomsService.getData();
   }
 
 }

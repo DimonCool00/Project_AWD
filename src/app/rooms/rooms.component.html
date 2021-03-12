@@ -19,10 +19,16 @@
   <button class="btn btn-default filter-button" data-filter="Vip">Vip Lux suite</button>
   <button class="btn btn-default filter-button" data-filter="Presidential">Presidential suite</button>
 
+
 </div>
+  <div class="panel">
+    <div style="text-align: center"><input [(ngModel)]="room" placeholder = "Модель" />
+      <button (click)="addItem(room)">Добавить</button>
+    </div>
+  </div>
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 mb-4 filter">
+      <div class="col-lg-4 mb-4 filter" *ngFor="let item of items">
         <div class="my-flip-container">
           <div class="my-flip-inner my-flip-right">
             <div class="my-flip-inner-wrapper">
@@ -31,7 +37,7 @@
                   <img src="#" alt="IMAGE">
                 </div>
                 <div class="my-flip-details">
-                  <h4 class="my-flip-heading">Rooms number 1</h4>
+                  <h4 class="my-flip-heading">{{item}}</h4>
                   <div class="my-flip-text">
                     <p>Some Description of this roo......
                       ....</p>
