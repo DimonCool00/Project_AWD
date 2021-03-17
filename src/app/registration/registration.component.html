@@ -11,10 +11,31 @@
       <p class="divider-text">
         <span class="bg-light">OR</span>
       </p>
-      <form method="post" enctype="multipart/form-data">
-
+      <form method="post" [formGroup]="registrationForm">
+        <p class="hint-text">Fill in this form to create your account!</p>
         <div class="form-group">
-        <input type="submit" class="btn btn-primary get-started-btn mt-1 mb-1 btn_reg"  value="Register">
+          <input type="text" formControlName="username" name="username" class="form-control" placeholder="Username" required="required">
+        </div>
+        <div class="form-group">
+          <input type="password" formControlName="password" name="password" class="form-control" placeholder="Password" required="required" (change)="checkPasswords()">
+        </div>
+        <div class="form-group">
+          <input type="email" formControlName="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+        </div>
+        <div class="form-group">
+          <input type="password" formControlName="passwordrep" name="passwordrep" class="form-control" placeholder="Confirm Password" required="required" (change)="checkPasswords()">
+        </div>
+        <span class="error" *ngIf="!arePasswordsSame">
+          passwords are not the same
+        </span>
+        <div class="form-group">
+          <input type="text" name="phonenumber" formControlName="phone" class="form-control" placeholder="PhoneNumber" required="required">
+        </div>
+        <div class="form-group">
+          <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms &amp; Conditions</a></label>
+        </div>
+        <div class="form-group">
+        <input type="submit" class="btn btn-primary get-started-btn mt-1 mb-1 btn_reg"  value="Register" (click)="login()">
         </div> <!-- form-group// -->
         <p class="text-center" >Have an account? <a href="{% url 'accounts:login' %}"style="color: #6d0019" >Log In</a> </p>
       </form>

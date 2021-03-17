@@ -13,7 +13,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { RoomdetailComponent } from './roomdetail/roomdetail.component';
 import {RouterModule, ROUTES} from '@angular/router';
 import {MoneyConverterPipe} from './pipes/money-converter.pipe';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {UserService} from './services/users.service';
 import {LoggingService} from './services/logging.service';
 import {RoomsService} from './services/rooms.service';
@@ -37,6 +37,7 @@ import {RoomsService} from './services/rooms.service';
     AppRoutingModule,
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [UserService, LoggingService,RoomsService],
   bootstrap: [AppComponent]
