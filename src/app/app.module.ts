@@ -17,6 +17,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {UserService} from './services/users.service';
 import {LoggingService} from './services/logging.service';
 import {RoomsService} from './services/rooms.service';
+import {ExitGuard} from './guards/exit.guard';
+import {StopGuard} from './guards/stop.guard';
 
 
 @NgModule({
@@ -39,7 +41,7 @@ import {RoomsService} from './services/rooms.service';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [UserService, LoggingService,RoomsService],
+  providers: [UserService, LoggingService, RoomsService, ExitGuard, StopGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

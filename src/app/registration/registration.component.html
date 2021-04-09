@@ -11,34 +11,43 @@
       <p class="divider-text">
         <span class="bg-light">OR</span>
       </p>
-      <form method="post" [formGroup]="registrationForm">
+      <form method="post" [formGroup]="registrationForm" #myForm="ngForm">
         <p class="hint-text">Fill in this form to create your account!</p>
         <div class="form-group">
-          <input type="text" formControlName="username" name="username" class="form-control" placeholder="Username" required="required">
+          <input type="text" formControlName="username" name="username" class="form-control" placeholder="Username" required="required" [(ngModel)] = "username">
         </div>
         <div class="form-group">
-          <input type="password" formControlName="password" name="password" class="form-control" placeholder="Password" required="required" (change)="checkPasswords()">
+          <input type="password" formControlName="password" name="password" class="form-control" placeholder="Password" required="required" (change)="checkPasswords()" [(ngModel)]="password1">
         </div>
         <div class="form-group">
-          <input type="email" formControlName="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+          <input type="email" formControlName="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="" [(ngModel)]="email">
         </div>
         <div class="form-group">
-          <input type="password" formControlName="passwordrep" name="passwordrep" class="form-control" placeholder="Confirm Password" required="required" (change)="checkPasswords()">
+          <input type="password" formControlName="passwordrep" name="passwordrep" class="form-control" placeholder="Confirm Password" required="required" (change)="checkPasswords()" [(ngModel)]="password2">
         </div>
         <span class="error" *ngIf="!arePasswordsSame">
           passwords are not the same
         </span>
         <div class="form-group">
-          <input type="text" name="phonenumber" formControlName="phone" class="form-control" placeholder="PhoneNumber" required="required">
+          <input type="text" name="phonenumber" formControlName="phone" class="form-control" placeholder="PhoneNumber" required="required" [(ngModel)]="phone">
         </div>
         <div class="form-group">
           <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms &amp; Conditions</a></label>
         </div>
         <div class="form-group">
-        <input type="submit" class="btn btn-primary get-started-btn mt-1 mb-1 btn_reg"  value="Register" (click)="login()">
+        <input type="submit" class="btn btn-primary btn-block"  value="Register" (click)="addUser()">
         </div> <!-- form-group// -->
         <p class="text-center" >Have an account? <a href="{% url 'accounts:login' %}"style="color: #6d0019" >Log In</a> </p>
       </form>
+      <div><h3>Users data:</h3>
+        <ul *ngFor="let user2 of users">
+          <li>{{user2.username}}</li>
+          <li>{{user2.password1}}</li>
+          <li>{{user2.email}}</li>
+          <li>{{user2.password2}}</li>
+          <li>{{user2.phone}}</li>
+        </ul>
+      </div>
     </article>
   </div> <!-- card.// -->
 

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  name = 'admin';
+  name = 'user';
   constructor() { }
 
   ngOnInit(): void {
